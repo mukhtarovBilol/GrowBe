@@ -53,6 +53,7 @@ span {
 
 .header__nav-list {
     display: flex;
+    align-items: center;
     gap: 30px;
     font-size: 14px;
     font-weight: 500;
@@ -79,6 +80,7 @@ span {
     padding: 13px 27px;
     text-align: center;
     border-radius: 30px;
+    display: block;
 }
 
 /* header content */
@@ -161,10 +163,11 @@ span {
     max-width: 843px;
     width: 100%;
     transition: 1s;
+    overflow-y: hidden;
 }
 
 .header__content-img:hover {
-    transform: scale(1.1);
+    transform: scale(0.9);
 }
 
 .header__content-image {
@@ -310,6 +313,10 @@ span {
     align-items: center;
 }
 
+.business__desc {
+    overflow-y: hidden;
+}
+
 .business__title {
     max-width: 409px;
     width: 100%;
@@ -339,6 +346,9 @@ span {
     background: #F25822;
     padding: 16px 31px;
     border-radius: 50px;
+    display: block;
+    max-width: 140px;
+    width: 100%;
 }
 
 .vector2 {
@@ -358,7 +368,7 @@ span {
 }
 
 .business__image:hover {
-    transform: scale(1.1);
+    transform: scale(0.9);
 }
 
 @media (max-width: 1083px) {
@@ -604,6 +614,10 @@ span {
 .marketing__cards {
     display: grid;
     gap: 47px;
+}
+
+.marketing__card {
+    overflow-y: hidden;
 }
 
 .marketing__social {
