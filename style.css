@@ -1165,7 +1165,6 @@ span {
 .footer__company-title {
     font-size: 24px;
     margin-bottom: 34px;
-    transform: translateX(-15px);
 }
 
 .footer__list {
