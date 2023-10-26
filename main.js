@@ -2,10 +2,16 @@
 
 const navBurger = document.querySelector(".nav__burger")
 const headerMenu = document.querySelector(".header__menu")
+const item = document.querySelector(".item")
+const click = document.querySelector(".click")
 
 navBurger.addEventListener("click", function () {
     headerMenu.classList.toggle("active")
     navBurger.classList.toggle("active")
+})
+
+item.addEventListener("click", function () {
+    click.classList.toggle("active")
 })
 
 // nav list

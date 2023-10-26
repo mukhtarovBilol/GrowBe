@@ -62,7 +62,27 @@ span {
 .header__nav-link {
     color: #000;
     display: flex;
+    align-items: center;
     transition: 0.4s;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.click {
+    transform: translateY(-100%);
+    transition: 1s;
+}
+
+.click.active {
+    width: 100px;
+    height: 100px;
+    background: #F25822;
+    border-radius: 10px;
+    transform: translateY(0);
 }
 
 .header__nav-link:hover {
@@ -70,7 +90,7 @@ span {
 }
 
 .vector {
-    width: 6px;
+    width: 10px;
     margin-left: 3px;
 }
 
@@ -129,7 +149,7 @@ span {
     display: flex;
     align-items: center;
     gap: 27px;
-    max-width: 290px;
+    max-width: 310px;
     width: 100%;
 }
 
@@ -218,7 +238,9 @@ span {
 
 @media (max-width: 850px) {
     .nav__burger {
-        /* background: url(./image/header/X.png) center center / cover no-repeat; */
+        position: fixed;
+        right: 5%;
+        top: 5%;
         width: 30px;
         height: 30px;
         background: #000;
@@ -392,8 +414,7 @@ span {
     }
 
     .business__link {
-        display: flex;
-        justify-content: center;
+        margin: 0 auto;
     }
 
     .business__image {
@@ -825,6 +846,8 @@ span {
 }
 
 .button {
+    display: flex;
+    justify-content: center;
    color: #fff;
    background: #F25822;
    font-size: 13px;  
@@ -934,6 +957,7 @@ span {
     background: #fff;
     transition: 1s;
     margin-bottom: 15%;
+    overflow-y: hidden;
 }
 
 .plans__card:hover{
