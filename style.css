@@ -238,6 +238,8 @@ span {
 
 @media (max-width: 850px) {
     .nav__burger {
+        transform: rotate(0);
+        transition: 1s;
         position: fixed;
         right: 5%;
         top: 5%;
@@ -252,6 +254,7 @@ span {
 
     .nav__burger.active {
         background: #fff;
+        transform: rotate(360deg);
     }
 
     .header__menu {
