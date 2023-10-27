@@ -63,6 +63,7 @@ span {
     color: #000;
     display: flex;
     align-items: center;
+    gap: 5px;
     transition: 0.4s;
 }
 
@@ -89,7 +90,7 @@ span {
     color: #F25822;
 }
 
-.vector {
+.header__nav-link svg {
     width: 10px;
     margin-left: 3px;
 }
@@ -242,7 +243,7 @@ span {
         transition: 1s;
         position: fixed;
         right: 5%;
-        top: 5%;
+        /* top: 5%; */
         width: 30px;
         height: 30px;
         background: #000;
@@ -280,6 +281,7 @@ span {
         font-size: 20px;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .header__nav-link {
@@ -289,6 +291,23 @@ span {
     .header__nav-started {
         background: unset;
         padding: 0;
+    }
+
+    .header__nav-link svg path {
+        fill: #fff;
+    }
+
+    .header__nav-link svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (max-width: 480px) {
+        .item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
     }
 }
 
