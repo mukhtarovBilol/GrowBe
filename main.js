@@ -56,10 +56,10 @@ header.addEventListener("mousemove", (e) => {
 // header__content
 
 
-// card
+// benefits__cards
 
-const cards = document.querySelector(".cards")
-const card = document.querySelectorAll(".card")
+const cards = document.querySelector(".benefits__cards")
+const card = document.querySelectorAll(".benefits__card")
 
 function entries(entries) {
     // console.log(card);
@@ -136,3 +136,19 @@ function timerEntries(entry) {
 
 const timerObserver = new IntersectionObserver(timerEntries, { threshold: 0.5 })
 timerObserver.observe(countCards)
+
+// clients
+
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    // direction: 'vertical',
+    loop: true,
+    // spaceBeetwen: 30,
+    slidesPerView: 2,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+});

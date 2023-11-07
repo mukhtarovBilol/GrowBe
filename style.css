@@ -4,8 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Gilroy-Bold;
-    overflow-x: hidden;
+    font-family: Gilroy;
 }
 
 a {
@@ -17,7 +16,7 @@ ul {
 }
 
 .container {
-    max-width: 1170px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
@@ -30,22 +29,23 @@ ul {
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 40px 0;
+    z-index: 1000;
 }
 
-.header__nav-logo {
+.logo {
     display: flex;
     align-items: center;
     color: #000;
     font-size: 24px;
     font-weight: 700;
-    padding: 40px 0;
 }
 
 span {
     color: #F25822;
 }
 
-.header__nav-logoImage {
+.image {
     max-width: 35px;
     width: 100%;
     margin-right: 14px;
@@ -97,7 +97,7 @@ span {
 
 .header__nav-started {
     color: #fff;
-    background:#F25822;
+    background: #F25822;
     padding: 13px 27px;
     text-align: center;
     border-radius: 30px;
@@ -149,6 +149,7 @@ span {
 .header__content-btn {
     display: flex;
     align-items: center;
+    /* flex-wrap: wrap; */
     gap: 27px;
     max-width: 310px;
     width: 100%;
@@ -160,6 +161,8 @@ span {
     font-size: 15px;
     padding: 16px 36px;
     border-radius: 50px;
+    width: 100%;
+    text-align: center;
 }
 
 .header__content-start:hover {
@@ -172,6 +175,7 @@ span {
     color: #AAAAAA;
     font-size: 15px;
     gap: 15px;
+    width: 100%;
 }
 
 .play {
@@ -224,7 +228,7 @@ span {
 
     .header__content-title {
         max-width: 100%;
-    } 
+    }
 
     .header__content-txt {
         max-width: 100%;
@@ -241,9 +245,6 @@ span {
     .nav__burger {
         transform: rotate(0);
         transition: 1s;
-        position: fixed;
-        right: 5%;
-        /* top: 5%; */
         width: 30px;
         height: 30px;
         background: #000;
@@ -256,12 +257,14 @@ span {
     .nav__burger.active {
         background: #fff;
         transform: rotate(360deg);
+        position: fixed;
+        right: 5%;
     }
 
     .header__menu {
         position: fixed;
-        top: 0;
-        right: -100%;
+        top: -100%;
+        right: 0;
         width: 100%;
         height: 100vh;
         display: flex;
@@ -273,8 +276,8 @@ span {
         transition: 0.4s;
     }
 
-    .header__menu.active{
-        right: -50%;
+    .header__menu.active {
+        top: 0;
     }
 
     .header__nav-list {
@@ -301,13 +304,13 @@ span {
         width: 20px;
         height: 20px;
     }
+}
 
-    @media (max-width: 480px) {
-        .item {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
+@media (max-width: 480px) {
+    .item {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
     }
 }
 
@@ -352,7 +355,7 @@ span {
     overflow: hidden;
 }
 
-.business .container{
+.business .container {
     display: flex;
     align-items: center;
 }
@@ -396,7 +399,7 @@ span {
 }
 
 .vector2 {
-    position: absolute; 
+    position: absolute;
     left: 0;
     bottom: 9%;
     z-index: -1;
@@ -408,6 +411,11 @@ span {
 
 .business__image {
     max-width: 700px;
+    width: 100%;
+    transition: 1s;
+}
+
+.business__macbook {
     width: 100%;
 }
 
@@ -443,7 +451,8 @@ span {
         margin: 0 auto;
     }
 
-    .vector1,.vector2 {
+    .vector1,
+    .vector2 {
         display: none;
     }
 }
@@ -457,31 +466,31 @@ span {
 
 /* business */
 
-/* card */
+/* benefits */
 
-.cards {
+.benefits__cards {
     padding: 80px 0;
     transform: translateY(-50%);
     transition: 5s;
     opacity: 0;
 }
 
-.cards .container {
+.benefits__cards .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
     place-items: center;
 }
 
-.card {
+.benefits__card {
     padding: 40px 30px;
 }
 
-.cards.active {
+.benefits__cards.active {
     transform: translateY(0);
     opacity: 1;
 }
 
-.card:hover {
+.benefits__card:hover {
     background: #fff;
     box-shadow: 15px 25px 56px 6px rgba(0, 0, 0, 0.06);
 }
@@ -513,12 +522,14 @@ span {
 }
 
 @media (max-width: 320px) {
-    .cards {
+    .benefits__cards .container {
         transition: 2s;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
     }
 }
 
-/* card */
+/* benefits */
 
 /* should */
 
@@ -529,17 +540,18 @@ span {
 .should__cards {
     display: flex;
     justify-content: space-between;
-    overflow-x: auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 15px;
-    scroll-snap-type: x mandatory;
 }
 
 .should__card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-shrink: 0;
-    scroll-snap-align: center;
+    justify-content: end;
+    padding: 15px 0;
 }
 
 .should__card:hover {
@@ -633,8 +645,8 @@ span {
         text-align: center;
         max-width: 200px;
         width: 100%;
-    } 
-    
+    }
+
     .should__image {
         max-width: 300px;
     }
@@ -675,7 +687,7 @@ span {
     width: 100%;
     margin-left: -20%;
 }
- 
+
 .marketing__title {
     max-width: 557px;
     width: 100%;
@@ -744,7 +756,7 @@ span {
     }
 }
 
-@media (max-width: 962px) { 
+@media (max-width: 962px) {
     .marketing__card:nth-last-of-type(2) {
         transform: translateX(25%);
     }
@@ -755,11 +767,20 @@ span {
         display: flex;
         justify-content: center;
     }
+
     .marketing__card:nth-last-of-type(2) {
         transform: translateX(0);
     }
+
     .marketing__title {
         text-align: center;
+    }
+}
+
+@media (max-width: 320px) {
+    .email {
+        max-width: 64px;
+        width: 100%;
     }
 }
 
@@ -805,7 +826,7 @@ span {
     clip-path: circle(50% at 50% 50%);
     width: 15px;
     height: 15px;
-    background:#FFC700;
+    background: #FFC700;
 }
 
 .count__plus {
@@ -850,7 +871,8 @@ span {
     width: 400px;
 }
 
-.website__input, .website__email {
+.website__input,
+.website__email {
     padding: 17px 20px;
     background: #EEE;
     outline: 0;
@@ -870,16 +892,16 @@ span {
 .button {
     display: flex;
     justify-content: center;
-   color: #fff;
-   background: #F25822;
-   font-size: 13px;  
-   padding: 15px 49px;
-   text-align: center;
-   border-radius: 50px;
-   margin-left: 29px;
-   border: 0;
-   outline: 0;
-   cursor: pointer;
+    color: #fff;
+    background: #F25822;
+    font-size: 13px;
+    padding: 15px 49px;
+    text-align: center;
+    border-radius: 50px;
+    margin-left: 29px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
 }
 
 .website__image {
@@ -971,7 +993,7 @@ span {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
     place-items: center;
-    gap: 10px 
+    gap: 10px
 }
 
 .plans__card {
@@ -980,9 +1002,10 @@ span {
     transition: 1s;
     margin-bottom: 15%;
     overflow-y: hidden;
+    padding: 20px;
 }
 
-.plans__card:hover{
+.plans__card:hover {
     background: #FFF;
     box-shadow: 15px 25px 70px -5px rgba(0, 0, 0, 0.07);
     padding: 93px 76px;
@@ -1043,6 +1066,15 @@ span {
     padding: 9px 64px;
     border-radius: 50px;
     background: rgba(242, 88, 34, 0.25);
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 320px) {
+    .plans__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    }
 }
 
 /* plans */
@@ -1108,47 +1140,17 @@ span {
     width: 100%;
 }
 
+.members__fecebook {
+    width: 20px;
+    height: 20px;
+}
+
 .members__fecebook:hover {
     background: #F25822;
     border-radius: 20px;
-    width: 20px;
-    height: 20px;
 }
 
-.members__fecebook:hover svg path{
-    fill: #fff;
-}
-
-.members__twitter:hover {
-    background: #F25822;
-    border-radius: 20px;
-    width: 20px;
-    height: 20px;
-}
-
-.members__twitter:hover svg path{
-    fill: #fff;
-}
-
-.members__linkedin:hover {
-    background: #F25822;
-    border-radius: 20px;
-    width: 20px;
-    height: 20px;
-}
-
-.members__linkedin:hover svg path{
-    fill: #fff;
-}
-
-.members__google:hover {
-    background: #F25822;
-    border-radius: 20px;
-    width: 20px;
-    height: 20px;
-}
-
-.members__google:hover svg path{
+.members__fecebook:hover svg path {
     fill: #fff;
 }
 
@@ -1172,6 +1174,221 @@ span {
 
 /* members */
 
+/* clients */
+
+.clients {
+    padding: 93px 0;
+}
+
+.swiper {
+    height: 300px;
+}
+
+.clients__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 55px;
+}
+
+.clients__title {
+    font-size: 45px;
+    margin-bottom: 19px;
+    text-align: center;
+}
+
+.clients__txt {
+    max-width: 459px;
+    width: 100%;
+    color: #666;
+    text-align: center;
+}
+
+.swiper__txt {
+    max-width: 425px;
+    width: 100%;
+    color: #888;
+    text-align: center;
+    line-height: 150%;
+    margin: 0 auto;
+    margin-bottom: 26px;
+}
+
+.swiper__image {
+    max-width: 63px;
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.swiper__title {
+    font-size: 13px;
+    text-align: center;
+}
+
+.swiper__subtitle {
+    color: #888;
+    font-size: 13px;
+    text-align: center;
+}
+
+.swiper__client-card {
+    max-width: 571px;
+    width: 100%;
+    background: #FAFAFA;
+    box-shadow: 15px 25px 60px -10px rgba(0, 0, 0, 0.10);
+    padding: 25px 30px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .swiper__txt {
+        margin: 0;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+}
+
+/* clients */
+
+/* news */
+
+.news__desc {
+    margin-bottom: 10%;
+}
+
+.news {
+    padding: 90px 0;
+}
+
+.news__title {
+    font-size: 45px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.news__txt {
+    max-width: 569px;
+    width: 100%;
+    text-align: center;
+    columns: #666;
+    margin: 0 auto;
+}
+
+.swiper__desc-title {
+    font-size: 24px;
+    text-align: left;
+}
+
+.swiper__count {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.swiper__admin {
+    display: flex;
+    gap: 9px;
+}
+
+.swiper__admin-txt {
+    font-size: 11px;
+    text-align: center;
+    color: #888;
+}
+
+.swiper__img {
+    max-width: 400px;
+    width: 100%;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper__slide-desc {
+    max-width: 770px;
+    width: 100%;
+    gap: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    text-align: center;
+    font-size: 18px;
+}
+
+.swiper__desc-txt {
+    font-size: 15px;
+    max-width: 340px;
+    width: 100%;
+    color: #666;
+    line-height: 150%;
+    text-align: justify;
+    margin-top: 22px;
+    margin-bottom: 26px;
+}
+
+.swiper__desc-link {
+    color: #F25822;
+    font-size: 11px;
+}
+
+.swiper__desc {
+    text-align: justify;
+}
+
+.slide {
+    padding: 45px 30px;
+}
+
+.wrapper {
+    gap: 7%;
+}
+
+@media (max-width: 680px) {
+    .swiper__slide-desc {
+        flex-direction: column;
+    }
+
+    .swiper__desc-txt {
+        margin: 0 auto;
+        margin-top: 5%;
+    }
+
+    .swiper__desc-link {
+        display: flex;
+        justify-content: center;
+        margin-top: 5%;
+    }
+
+    .swiper__desc-title {
+        text-align: center;
+    }
+}
+
+@media (max-width:499px) {
+    .wrapper {
+        gap: 20%;
+    }
+
+    .swiper__count {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* news */
+
 /* footer */
 
 .footer .container {
@@ -1187,8 +1404,8 @@ span {
     max-width: 250px;
     width: 100%;
     color: #666;
-    line-height: 160%;   
-    margin-bottom: 8px;                 
+    line-height: 160%;
+    margin-bottom: 8px;
 }
 
 .footer__socials {
@@ -1197,14 +1414,17 @@ span {
     gap: 15px;
 }
 
-.footer__fecebook:hover {
-    background: #F25822;
-    border-radius: 30px;
+.footer__fecebook {
     width: 20px;
     height: 20px;
 }
 
-.footer__fecebook:hover svg path{
+.footer__fecebook:hover {
+    background: #F25822;
+    border-radius: 30px;
+}
+
+.footer__fecebook:hover svg path {
     fill: #fff;
 }
 
@@ -1215,7 +1435,7 @@ span {
 
 .footer__list {
     gap: 10px;
-    display: grid;  
+    display: grid;
     position: relative;
 }
 
@@ -1284,6 +1504,10 @@ span {
     display: flex;
     flex-direction: column;
     justify-content: end;
+}
+
+.footer__logo {
+    margin-bottom: 40px;
 }
 
 .text {
